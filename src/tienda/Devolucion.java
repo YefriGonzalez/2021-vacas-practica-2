@@ -30,7 +30,7 @@ public class Devolucion {
                     if(VectorPeliculas.getPeliculas()[i].getId()==idPeli && VectorClientes.getClientes()[j].getId()==idCliente){
                         VectorPeliculas.getPeliculas()[i].setEstaDisponible(true);
                         VectorClientes.getClientes()[j].setEstaDisponible(true);
-                        PrestamoPeliculas.setPrestadas([i]="");
+                        PrestamoPeliculas.prestadas[i]="";
                         System.out.println("--------PELICULA DEVUELTA-----------");
                     }
                 }

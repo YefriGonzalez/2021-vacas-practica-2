@@ -4,7 +4,7 @@ import src.clientes.VectorClientes;
 import src.peliculas.VectorPeliculas;
 
 public class PrestamoPeliculas {
-    private static String[] prestadas=new String[10000]; 
+    protected static String[] prestadas=new String[10000]; 
     private int contador;
     private static int[] vecesPrestadas=new int[50];
     public PrestamoPeliculas(){

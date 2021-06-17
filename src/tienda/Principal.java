@@ -12,6 +12,7 @@ public class Principal {
     private VectorPeliculas tablaPeliculas=new VectorPeliculas();
     private PrestamoPeliculas p1=new PrestamoPeliculas();
     private Devolucion dv=new Devolucion();
+    private Reportes reportes=new  Reportes();
 
     public Principal(){
 
@@ -30,6 +31,7 @@ public class Principal {
             System.out.println("9) Modificar Pelicula");
             System.out.println("10) Alquilar Pelicula");
             System.out.println("11) Devolver Pelicula");
+            System.out.println("12) Reportes");
             System.out.println("-1) Salir");
             System.out.println("\n");
             menu = IngresoDatos.getEntero("Ingrese la opción ", true);
@@ -69,12 +71,14 @@ public class Principal {
                 tablaPeliculas.mostrarPeliculas();
                 System.out.println("\nOrdenado:");
                 tablaPeliculas.ordenarPorNombre(true);
+                tablaPeliculas.mostrarPeliculas();
             } 
             if(menu==8){
                 System.out.println("Desordenado:");
                 tablaPeliculas.mostrarPeliculas();
                 System.out.println("\nOrdenado:");
                 tablaPeliculas.ordenarPorNombre(false);
+                tablaPeliculas.mostrarPeliculas();
             }
             if(menu==9){
                 tablaPeliculas.mostrarPeliculas();
@@ -92,6 +96,28 @@ public class Principal {
                 dv.devolucion();
                 tablaClientes.mostrarClientes();
                 tablaPeliculas.mostrarPeliculas();
+            }
+            if(menu==12){
+                int opcion;
+                System.out.println("1.Reporte General       2.Reporte de categoria Especifica");
+                System.out.println("3.Cantidad de veces prestada     4.Pelicula mas prestada");
+                System.out.println("5.Pelicula menos prestada       6.Regresar");
+                opcion=IngresoDatos.getEntero("Ingrese la opcion: ", false);
+                if(opcion==1){
+                    reportes.reportesCompletos();
+                }
+                if(opcion==2){
+                    reportes.categoriEspecifica();
+                }
+                if(opcion==3){
+                    reportes.cantidadVecesQueAlquila();
+                }
+                if(opcion==4){
+                    reportes.mayorVecesPrestado();
+                }
+                if(opcion==5){
+                    reportes.menorVecesPrestada();
+                }
             }
         }
     }

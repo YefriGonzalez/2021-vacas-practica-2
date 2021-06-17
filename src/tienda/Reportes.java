@@ -28,8 +28,7 @@ public class Reportes {
 
     public void categoriEspecifica(){
         int categoria=IngresoDatos.getEntero(p.categoria(),false);
-        String categ=IngresoDatos.getTexto(p.elegirCategorias(categoria));
-        categoria(categ);
+        categoria(p.elegirCategorias(categoria));
     }
 
     public void categoria(String categoria){
@@ -45,8 +44,9 @@ public class Reportes {
         for(int i=0;i<VectorPeliculas.getContador();i++){
             System.out.print(VectorPeliculas.getPeliculas()[i].getInformacion());
             System.out.print("        ");
-            System.out.print("Veces Prestada: "+PrestamoPeliculas.getVecesPrestadas()[i]);
+            System.out.print("Veces Prestada: "+PrestamoPeliculas.getVecesPrestadas()[i]+"\n");
             System.out.println("\n");
+            
         }
     }
 
@@ -60,7 +60,8 @@ public class Reportes {
             if(PrestamoPeliculas.getVecesPrestadas()[i]==mayorVecesPrestado){
                 System.out.print(VectorPeliculas.getPeliculas()[i].getInformacion());
                 System.out.print("    ");
-                System.out.print("Veces Prestada: "+PrestamoPeliculas.getVecesPrestadas()[i]);
+                System.out.print("Veces Prestada: "+PrestamoPeliculas.getVecesPrestadas()[i]+"\n");
+                System.out.println("\n");
             }
         }
         
@@ -76,7 +77,8 @@ public class Reportes {
             if(PrestamoPeliculas.getVecesPrestadas()[i]==menorVecesPrestada){
                 System.out.print(VectorPeliculas.getPeliculas()[i].getInformacion());
                 System.out.print("    ");
-                System.out.print("Veces Prestada: "+PrestamoPeliculas.getVecesPrestadas()[i]);
+                System.out.print("Veces Prestada: "+PrestamoPeliculas.getVecesPrestadas()[i]+"\n");
+                System.out.println("\n");
             }
         }
     }

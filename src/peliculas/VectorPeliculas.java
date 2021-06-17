@@ -98,7 +98,7 @@ public class VectorPeliculas {
         int nuevoAño;
         String nuevoNombre;
         for(int i=0;i<contador;i++){
-            if(pelicula[i]==pelicula[id]){
+            if(pelicula[i].getId()==id){
                 System.out.println("Categoria Actual: "+pelicula[i].getCategoria());
                 nuevaCategoria=IngresoDatos.getEntero(categoria(),false);
                 pelicula[i].setCategoria(elegirCategorias(nuevaCategoria));
