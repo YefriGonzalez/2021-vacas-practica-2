@@ -3,11 +3,19 @@ package src.clientes;
 import src.tienda.*;
 
 public class VectorClientes {
-    private Cliente[] clientes = new Cliente[50];
-    private int siguienteCodigo;
+    private static Cliente[] clientes = new Cliente[50];
+    private static int siguienteCodigo;
 
     public VectorClientes(){
-        siguienteCodigo = 1;
+        siguienteCodigo = 0;
+    }
+
+    public static int getSiguienteCodigo(){
+        return siguienteCodigo;
+    }
+
+    public static  Cliente[] getClientes(){
+        return clientes;
     }
 
     //agregar clientes
@@ -16,14 +24,14 @@ public class VectorClientes {
             System.out.println("Límite de clientes alcanzado");
         }
         else{
-            clientes[(siguienteCodigo-1)] = new Cliente(siguienteCodigo, nombre, telefono);
+            clientes[(siguienteCodigo)] = new Cliente(siguienteCodigo, nombre, telefono,true);
         }
         siguienteCodigo++;
     }
 
     public void agregarCliente(){
-        String nombre = IngresoDatos.getTexto("Ingrese el nombre del cliente");
-        int telefono = IngresoDatos.getEntero("Ingrese el número de telefono", false);
+        String nombre = IngresoDatos.getTexto("Ingrese el nombre del cliente: ");
+        int telefono = IngresoDatos.getEntero("Ingrese el número de telefono: ", false);
         agregarCliente(nombre, telefono);
     }
 
@@ -32,10 +40,10 @@ public class VectorClientes {
     // fin agregar clientes
 
     public void mostrarClientes(){
-        System.out.println("\n\n Clientes de memorabilia");
-        for (int i = 0; i < (siguienteCodigo-1); i++) {
-            System.out.println("-"+i+") "+clientes[i].getInformacion());
-            //System.out.println("-"+i+") "+clientes[i].getId() + " nombre "+clientes[i].getNombre()+ " telefono "+clientes[i].getTelefono());
+        System.out.println("\n Clientes de memorabilia");
+        for (int i = 0; i <siguienteCodigo; i++) {
+            System.out.println("--"+i+") "+clientes[i].getInformacion());
+            //System.out.println("--"+i+") "+clientes[i].getId() + " nombre "+clientes[i].getNombre()+ " telefono "+clientes[i].getTelefono());
             
         }
 
@@ -47,8 +55,8 @@ public class VectorClientes {
     public void ordenarPorNombre(boolean ascendente){
         boolean cambio = true;
 
-        for (int i = 1; i < (siguienteCodigo-1); i++) {
-            for (int j = 0; j < (siguienteCodigo-1-i); j++) {
+        for (int i = 0; i < siguienteCodigo; i++) {
+            for (int j = 0; j < (siguienteCodigo-i-1); j++) {
                 //  String.compareTo(String)
                 //   [-oo , + oo]
                 if (ascendente)

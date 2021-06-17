@@ -34,5 +34,7 @@ public class IngresoDatos {
         String res = scanner.nextLine();
         return res;
     }
+
+   
     
 }
