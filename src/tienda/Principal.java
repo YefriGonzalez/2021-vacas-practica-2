@@ -27,7 +27,7 @@ public class Principal {
             System.out.println("5) Ingreso de peliculas");
             System.out.println("6) Mostrar Peliculas");
             System.out.println("7) Ordenar Peliculas en forma Ascendente");
-            System.out.println("8) Ordenar Peliculas en fomra Descendente");
+            System.out.println("8) Ordenar Peliculas en forma Descendente");
             System.out.println("9) Modificar Pelicula");
             System.out.println("10) Alquilar Pelicula");
             System.out.println("11) Devolver Pelicula");
