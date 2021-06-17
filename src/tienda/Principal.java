@@ -11,6 +11,7 @@ public class Principal {
     private VectorClientes tablaClientes = new VectorClientes();
     private VectorPeliculas tablaPeliculas=new VectorPeliculas();
     private PrestamoPeliculas p1=new PrestamoPeliculas();
+    private Devolucion dv=new Devolucion();
 
     public Principal(){
 
@@ -28,6 +29,7 @@ public class Principal {
             System.out.println("8) Ordenar Peliculas en fomra Descendente");
             System.out.println("9) Modificar Pelicula");
             System.out.println("10) Alquilar Pelicula");
+            System.out.println("11) Devolver Pelicula");
             System.out.println("-1) Salir");
             System.out.println("\n");
             menu = IngresoDatos.getEntero("Ingrese la opción ", true);
@@ -84,6 +86,12 @@ public class Principal {
                 tablaPeliculas.mostrarPeliculas();
                 p1.alquiler();
                 p1.mostrarDatos();
+            }
+            if(menu==11){
+                p1.mostrarDatos();
+                dv.devolucion();
+                tablaClientes.mostrarClientes();
+                tablaPeliculas.mostrarPeliculas();
             }
         }
     }

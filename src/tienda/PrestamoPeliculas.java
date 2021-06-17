@@ -4,10 +4,27 @@ import src.clientes.VectorClientes;
 import src.peliculas.VectorPeliculas;
 
 public class PrestamoPeliculas {
-    private String[] prestadas=new String[10000]; 
-    int contador;
+    private static String[] prestadas=new String[10000]; 
+    private int contador;
+    private static int[] vecesPrestadas=new int[50];
     public PrestamoPeliculas(){
         contador=0;
+        inicializarVecesPrestadas();
+    }
+
+    public static int[] getVecesPrestadas(){
+        return vecesPrestadas;
+        
+    }
+
+    public static void setPrestadas(String[] prestada){
+        prestadas=prestada;
+    }
+
+    public void inicializarVecesPrestadas(){
+        for(int i=0;i<vecesPrestadas.length;i++){
+            vecesPrestadas[i]=0;
+        }
     }
 
     public  void alquiler(){
@@ -35,6 +52,7 @@ public class PrestamoPeliculas {
                     if(VectorPeliculas.getPeliculas()[i].getId()==idPeli && VectorClientes.getClientes()[j].getId()==idCliente){
                         VectorPeliculas.getPeliculas()[i].setEstaDisponible(false);
                         VectorClientes.getClientes()[j].setEstaDisponible(false);
+                        vecesPrestadas[i]++;
                         prestadas[contador]="Id Pelicula: "+idPeli+". Id Cliente: "+idCliente+". Cantidad de dias: "+dias;
                         System.out.println("--------PELICULA ALQUILADA-----------");
                         contador++;

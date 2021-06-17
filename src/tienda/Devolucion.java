@@ -30,6 +30,7 @@ public class Devolucion {
                     if(VectorPeliculas.getPeliculas()[i].getId()==idPeli && VectorClientes.getClientes()[j].getId()==idCliente){
                         VectorPeliculas.getPeliculas()[i].setEstaDisponible(true);
                         VectorClientes.getClientes()[j].setEstaDisponible(true);
+                        PrestamoPeliculas.setPrestadas([i]="");
                         System.out.println("--------PELICULA DEVUELTA-----------");
                     }
                 }
@@ -38,7 +39,4 @@ public class Devolucion {
             System.out.println("\nLos datos son incorrectos\n");
         }
     }
-
-    
-
 }

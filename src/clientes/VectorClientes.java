@@ -43,11 +43,8 @@ public class VectorClientes {
         System.out.println("\n Clientes de memorabilia");
         for (int i = 0; i <siguienteCodigo; i++) {
             System.out.println("--"+i+") "+clientes[i].getInformacion());
-            //System.out.println("--"+i+") "+clientes[i].getId() + " nombre "+clientes[i].getNombre()+ " telefono "+clientes[i].getTelefono());
-            
         }
-
-        System.out.println("\n\n");
+        System.out.println("\n");
     }
 
 
